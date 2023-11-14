@@ -63,4 +63,14 @@ class OrderViewModel : ViewModel() {
         val kalkulasHarga = jumlah * HARGA_PER_CUP
         return NumberFormat.getNumberInstance().format(kalkulasHarga)
     }
+
+    fun setContact(list: MutableList<String>){
+        _stateUI.update { stateSaatini ->
+            stateSaatini.copy(
+                nama = list[0],
+                alamat = list[1],
+                tlp = list[2],
+            )
+        }
+    }
 }
