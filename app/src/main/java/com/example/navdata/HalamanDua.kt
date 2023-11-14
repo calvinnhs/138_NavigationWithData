@@ -31,6 +31,11 @@ fun HalamanDua(
         Pair(stringResource(R.string.quantity), orderUIState.jumlah),
         Pair(stringResource(R.string.flavor), orderUIState.rasa)
     )
+    val contact = listOf(
+        Pair(stringResource(id = R.string.namap), orderUIState.nama),
+        Pair(stringResource(id = R.string.nomorp), orderUIState.tlp),
+        Pair(stringResource(id = R.string.alamatp), orderUIState.alamat)
+    )
     Column (
         modifier = modifier,
         verticalArrangement = Arrangement.SpaceBetween
@@ -39,6 +44,7 @@ fun HalamanDua(
             modifier = Modifier.padding(dimensionResource(R.dimen.padding_medium)),
             verticalArrangement = Arrangement.spacedBy(dimensionResource(R.dimen.padding_small))
         ){
+
             items.forEach { item ->
                 Column {
                     Text(item.first.uppercase())
